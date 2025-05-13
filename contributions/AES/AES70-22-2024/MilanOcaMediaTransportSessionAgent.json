@@ -1,0 +1,44 @@
+{
+    "type": "ControlClass",
+    "name": "MilanOcaMediaTransportSessionAgent",
+    "parent": "OcaMediaTransportSessionAgent",
+    "classid": {
+        "cid": "000B5E",
+        "suffix": "2200"
+    },
+    "properties": [
+        {
+            "id": { "level": 3, "index": 3 },
+            "name": "SessionStatuses"
+        }
+    ],
+    "methods": [
+        {
+            "id": { "level": 3, "index": 11 },
+            "name": "GetSessionStatuses",
+            "arguments": [],
+            "return_values": [
+                {
+                    "name": "Sessions",
+                    "type": "OcaMap<OcaMediaTransportSessionID,MilanOcaMediaTransportSessionStatus>"
+                }
+            ]
+        },
+        {
+            "id": { "level": 3, "index": 11 },
+            "name": "GetSessionStatus",
+            "arguments": [
+                {
+                    "name": "ID",
+                    "type": "OcaMediaTransportSessionID"
+                }
+            ],
+            "return_values": [
+                {
+                    "name": "Session",
+                    "type": "MilanOcaMediaTransportSessionStatus"
+                }
+            ]
+        }
+    ]
+}

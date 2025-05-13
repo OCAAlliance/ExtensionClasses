@@ -1,0 +1,14 @@
+{
+    "type": "struct",
+    "name": "MilanOcaMediaTransportSessionStatus",
+    "properties": [
+        {
+            "type": "OcaMediaTransportSessionState",
+            "name": "State"
+        },
+        {
+            "type": "OcaTypedBlob<MilanSessionStatusAdaptationData>",
+            "name": "AdaptationData"
+        }
+    ]
+}

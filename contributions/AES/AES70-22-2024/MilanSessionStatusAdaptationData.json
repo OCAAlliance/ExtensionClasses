@@ -1,0 +1,31 @@
+{
+    "type": "struct",
+    "name": "MilanSessionStatusAdaptationData",
+    "properties": [
+        {
+            "name": "Substate",
+            "type": "MilanOcaSessionConfigSubstate",
+            "comment": "Substate of a configured Session as defined in Table 29. This field shall only be defined when the Session's state is Configured."
+        },
+        {
+            "name": "AcmpFailureCode",
+            "type": "OcaUint8",
+            "comment": "ACMP status reported by the last PROBE_TX_RESPONSE received. This field shall only be defined when the Session's state is Configured and the Session's substate is ProbingSource."
+        },
+        {
+            "name": "SrpFailureBridgeID",
+            "type": "OcaUint64",
+            "comment": "Equal to the value of the msrp_failure_bridge_id parameter by the GET_STREAM_INFO command. This field shall only be defined when the Session's state is Configured and the Session's substate is ReservationError."
+        },
+        {
+            "name": "SrpFailureCode",
+            "type": "OcaUint8",
+            "comment": "Equal to the value of the msrp_failure_code field returned by the GET_STREAM_INFO command. This parameter shall only be defined when the Session's state is Configured and the Session's substate is ReservationError."
+        },
+        {
+            "name": "MSRPAccumulatedLatency",
+            "type": "OcaUint32",
+            "comment": "Equal to the value of the msrp_ accumulated_latency parameter returned by the GET_STREAM_INFO command. This parameter shall only be defined when the Session's state is ConnectedStreaming."
+        }
+    ]
+}

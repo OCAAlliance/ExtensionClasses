@@ -1,0 +1,26 @@
+{
+    "type": "enum",
+    "name": "MilanOcaSessionConfigSubstate",
+    "enumerators": [
+        {
+            "name": "Undefined",
+            "value": 0,
+            "comment": "The corresponding OcaMediaTransportSession is not in the Configured state."
+        },
+        {
+            "name": "SourceNotPresent",
+            "value": 1,
+            "comment": "Awaiting ADP discovery message from the Talker. This substate is equivalent to the input Stream state PRB_W_AVAIL."
+        },
+        {
+            "name": "ProbingSource",
+            "value": 2,
+            "comment": "In the process of probing the source. This substate is equivalent to the input Stream states PRB_W_DELAY, PRB_W_RESP, PRB_W_RESP2, and PRB_W_RETRY. The AcmpFailureCode field shall indicate the result of the last probe. This field is expected to be 0 the first time the source is probed."
+        },
+        {
+            "name": "ReservationError",
+            "value": 3,
+            "comment": "SRP reservation failed (registering an MSRP Talker Failed attribute). When in this substate, the SrpFailureCode and SrpFailureBridgeID fields shall provide further details. This substate is equivalent to the input Stream state SETTLED_NO_RSV."
+        }
+    ]
+}

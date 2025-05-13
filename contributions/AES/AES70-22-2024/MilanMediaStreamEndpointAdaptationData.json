@@ -1,0 +1,31 @@
+{
+    "type": "struct",
+    "name": "MilanMediaStreamEndpointAdaptationData",
+    "properties": [
+        {
+            "name": "StreamID",
+            "type": "OcaUint64",
+            "comment": "Equal to the value of the Stream ID field of the STREAM_INPUT / STREAM_OUTPUT descriptor of the associated ENTITY."
+        },
+        {
+            "name": "MacAddress",
+            "type": "OcaBlobFixedLength<6>",
+            "comment": "Equal to the Stream Destination MAC Address field of the STREAM_INPUT / STREAM_OUTPUT descriptor."
+        },
+        {
+            "name": "VlanID",
+            "type": "OcaUint16",
+            "comment": "This field shall be writeable for Output Endpoints which are in the NotReady state using the method SetEndpointAdatpationData(...). In all other cases, this field shall be read-only."
+        },
+        {
+            "name": "BufferLength",
+            "type": "OcaUint32",
+            "comment": "Equal to the buffer_length field of the STREAM_INPUT / STREAM_OUTPUT descriptor."
+        },
+        {
+            "name": "PresentationTimeOffset",
+            "type": "OcaUint32",
+            "comment": "For an Output Endpoint, equal to the value of the msrp_accumulated_latency field of the GET_STREAM_INFO command for the Endpoint's output Stream. For an Input Endpoints, zero. This field shall be writeable for Output Endpoints which are in the NotReady state using the method SetEndpointAdaptationData(...). In all other cases, this field shall be read-only."
+        }
+    ]
+}
