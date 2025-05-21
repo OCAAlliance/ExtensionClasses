@@ -1,5 +1,38 @@
-# Introduction
+# License for Use
 
-# List of contributions
+The file(s) in this repository are licensed under the Apache License, Version 2.0 (the "License"); 
+you may not use these files except in compliance with the License. 
+The text of the License is at:
 
-- [AES70-22 OcaMilan](./contributions/AES/AES70-22-2024/)
+[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0) .
+
+# Indemnification
+
+Unless required by applicable law or agreed to in writing, 
+software distributed under the License is distributed on an "AS IS" BASIS, 
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+See the License for the specific language governing permissions and limitations under the License.
+
+# Contribution
+
+Anyone may contribute this project by submitting a Git Pull Request
+to the project's repository.  No prior authorization is required.  
+
+The comments field of every submitted Pull Request 
+must contain a brief text that certifies the contributed content complies with the terms of the 
+[Developer's Certificate of Origin (DCO)](https://developercertificate.org/)
+a simple document written by the Linux Foundation that attests the contributor
+has sufficient rights to make the contribution.
+
+Pull Requests without DCO certifications will not be accepted by the Repository Manager,
+and should be resubmitted with certification included.
+
+The required Pull Request text is as follows:	
+
+	The entire content of this Pull Request complies with
+	the Linux Developer Certificate of Origin, the text of which is at
+	https://developercertificate.org/. <Full name> <email>
+
+# Guidelines
+
+Full guidelines for use of and contribution to OCA Alliance open-source software projects are here: [https://ocaalliance.github.io/opensource.html](https://ocaalliance.github.io/opensource.html).
