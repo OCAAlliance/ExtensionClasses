@@ -33,37 +33,46 @@ This repository has the following structure:
 ```
 Folder or File                        Contents
 --------------------------------------------------------------
-[contributorName(1)]-Contribution     Contributed files
+contributions                         Contribution folders
+contributions/[contributorName(1)]    Contribution folder
 ...	 	
-[contributorName(n)]-Contribution     Contributed files 				 
+contributions/[contributorName(n)]    Contribution folder 				 
  					
-License/                              Copy of Apache 2.0 license	
+License.txt                           Copy of Apache 2.0 license	
 ClassDescriptorSchema.json            JSON Schema for the class descriptor
 README.md                             Readme file 
 --------------------------------------------------------------
 ```
 ## Contribution folders
 
-Each contributor has their own folder.  The folder's name is the name of the entity that owns the content - an organization or an individual - or a reasonable short form of that name, followed by the text '-Contribution', e.g. **AES-Contribution**.
+Each contributor has their own folder.  The folder's name is the name of the entity that owns the content - an organization or an individual - or a reasonable short form of that name.
 
-Folder contents should be as follows:
+Contribution folder contents should be as follows:
 ```
-Folder or File                        Contents
+Folder or File                 Contents
 ---------------------------------------------------------------------------
-File(1)                               Class Descriptor or other file
+File(1)                        Class Descriptor or other file or subfolder
 ...
-File(n)                               Class Descriptor or other file	
+File(n)                        Class Descriptor or other file or subfolder
 
-README.md                             Readme file - see below
+README.md                      Readme file - see below
 --------------------------------------------------------------------------
 ```
+In general,  the contents of a contribution folder may be structured in whatever way is appropriate for the contributed material.  Specific content options are Class Descriptors, other files, subfolders, and the README file.
 
 ## Class Descriptors
 
 A class Descriptor is a file in JSON format that describes one or more AES70 classes or datatypes.  
 A JSON schema that defines this format is on this repository's home page, **[here](../ClassDescriptorSchema.json)**.
 
+## Other Files
+The contribution folder can contain other relevant files - documentation, data, whatever. However, the inclusion of large files - videos, for example - is discouraged.  Please provide links to such files instead.
+
+## Subfolders
+The contribution folder may contain subfolders as required.
+
 ## README File
+
 Each contribution README file should begin with information that appropriately identifies the contribution's owner and submitter.
 Suggested information items include:
 
@@ -74,12 +83,11 @@ Suggested information items include:
 
 The file should describe the contributed content in appropriate detail and/or point to detailed online documentation.
 
-## Other Files
-The contribution folder can contain other relevant files - documentation, data, whatever. However, the inclusion of large files - videos, for example - is discouraged.  Please provide links to such files instead.
-
 # How To Contribute
-Anyone may contribute this project by submitting a Git Pull Request
-to the project's repository.  No prior authorization is required. 
+Anyone may contribute to this project by submitting a Git Pull Request
+to the project's repository.  No prior authorization is required.  
+
+Contributions are welcomed and encouraged. 
 
 ## Developer Certificate of Origin 
 
