@@ -1,5 +1,5 @@
 {
-    "type": "enum",
+    "type": "enum8",
     "name": "MilanOcaSessionConfigSubstate",
     "enumerators": [
         {
