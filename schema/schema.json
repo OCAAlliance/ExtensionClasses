@@ -1,0 +1,412 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "type": {
+          "const": "enum8"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$"
+        },
+        "enumerators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "comment": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "value": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 255
+              }
+            },
+            "required": [
+              "name",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "enumerators"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "type": {
+          "const": "enum16"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$"
+        },
+        "enumerators": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "comment": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "value": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 65535
+              }
+            },
+            "required": [
+              "name",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "enumerators"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "type": {
+          "const": "struct"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$"
+        },
+        "properties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "comment": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "type": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              }
+            },
+            "required": [
+              "name",
+              "type"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "properties"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "type": {
+          "const": "ControlClass"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$"
+        },
+        "parent": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$"
+        },
+        "classid": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^\\d+(\\.\\d+)*$"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "comment": {
+                  "type": "string"
+                },
+                "cid": {
+                  "type": "string",
+                  "pattern": "^[a-fA-F0-9]{6}$"
+                },
+                "suffix": {
+                  "type": "string",
+                  "pattern": "^\\d+(\\.\\d+)*$"
+                }
+              },
+              "required": [
+                "suffix"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "properties": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "comment": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "type": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "id": {
+                "type": "object",
+                "properties": {
+                  "comment": {
+                    "type": "string"
+                  },
+                  "level": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535
+                  },
+                  "index": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "level",
+                  "index"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "name",
+              "type",
+              "id"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "methods": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "comment": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "type": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "id": {
+                "type": "object",
+                "properties": {
+                  "comment": {
+                    "type": "string"
+                  },
+                  "level": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535
+                  },
+                  "index": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "level",
+                  "index"
+                ],
+                "additionalProperties": false
+              },
+              "arguments": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "comment": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9]+$"
+                    },
+                    "type": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9]+$"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "type"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "return_values": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "comment": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9]+$"
+                    },
+                    "type": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9]+$"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "type"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "name",
+              "type",
+              "id",
+              "arguments",
+              "return_values"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "comment": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "type": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "id": {
+                "type": "object",
+                "properties": {
+                  "comment": {
+                    "type": "string"
+                  },
+                  "level": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535
+                  },
+                  "index": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 65535
+                  }
+                },
+                "required": [
+                  "level",
+                  "index"
+                ],
+                "additionalProperties": false
+              },
+              "argument": {
+                "type": "object",
+                "properties": {
+                  "comment": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9]+$"
+                  },
+                  "type": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9]+$"
+                  }
+                },
+                "required": [
+                  "name",
+                  "type"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "name",
+              "type",
+              "id",
+              "argument"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "parent",
+        "classid"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}
