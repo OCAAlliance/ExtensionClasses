@@ -39,7 +39,8 @@ contributions/[contributorName(1)]    Contribution folder
 contributions/[contributorName(n)]    Contribution folder 				 
  					
 License.txt                           Copy of Apache 2.0 license	
-ClassDescriptorSchema.json            JSON Schema for the class descriptor
+schema								  Directory containing schema utilities.
+schema/schema.json            		  JSON Schema for the class descriptor
 README.md                             Readme file 
 --------------------------------------------------------------
 ```
@@ -63,7 +64,7 @@ In general,  the contents of a contribution folder may be structured in whatever
 ## Class Descriptors
 
 A class Descriptor is a file in JSON format that describes one or more AES70 classes or datatypes.  
-A JSON schema that defines this format is on this repository's home page, **[here](../ClassDescriptorSchema.json)**.
+A JSON schema that defines this format is on this repository's home page, **[here](schema/schema.json)**.
 
 ## Other Files
 The contribution folder can contain other relevant files - documentation, data, whatever. However, the inclusion of large files - videos, for example - is discouraged.  Please provide links to such files instead.
