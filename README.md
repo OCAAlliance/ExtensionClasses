@@ -1,5 +1,7 @@
 # OCA Alliance Extension Classes
 
+This repository contains definitions of custom classes that OCA application developers are sharing for public use. Some of these classes are so-called "Adaptation" classes, defined by the AES in Adaptation standards such as AES70-21; others are proprietary classes whose definitions their makers would like to share.  All of the definitions are offered on an AS-IS basis, and are free to use.
+
 ## Legal Notices
 
 ### License for Use
