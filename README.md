@@ -21,35 +21,87 @@ Full guidelines for use of and contribution to OCA Alliance open-source software
 ### Structure of this repository
 
 This repository has the following structure:
-```
-Folder or File                        Contents
-----------------------------------------------------------
-contributions                         Contribution folders
-contributions/[contributorName(1)]    Contribution folder
-   ...	 	
-contributions/[contributorName(n)]    Contribution folder 				 
- 					
-LICENSE.txt           Copy of software license	
-README.md             Readme file
-schema                Directory containing schema utilities
-schema/schema.json    JSON Schema for the class descriptor
-----------------------------------------------------------
-```
+
+<table cellspacing=0 cellpadding=0 border=0>
+	<tr>
+		<td ><b>FOLDER OR FILE</b></td>
+		<td><b>CONTENTS</b></td>
+	</tr>
+	
+	<tr>
+		<td>contributions</td>
+		<td>Contribution folders</td>
+	</tr>
+	
+	<tr>
+		<td>contributions/contributorName(1)</td>
+		<td>Contribution folder 1</td>
+	</tr>
+	
+	<tr>
+		<td><b>. . .</b></td>
+		<td></td>
+	</tr>	
+	
+	<tr>
+		<td>contributions/contributorName(n)</td>
+		<td>Contribution folder n</td>
+	</tr>
+	
+	<tr>
+		<td>LICENSE.txt</td>
+		<td>Copy of software license</td>
+	</tr>
+	
+	<tr>
+		<td>README.md</td>
+		<td>Readme file</td>
+	</tr>
+	
+	<tr>
+		<td>schema</td>
+		<td>Directory containing schema utilities</td>
+	</tr>
+	
+	<tr>
+		<td>schema/schema.json</td>
+		<td>JSON Schema for the class descriptor</td>
+	</tr>
+</table>
+
 ### Contribution folders
 
 Each contributor has their own folder.  The folder's name is the name of the entity that owns the content - an organization or an individual - or a reasonable short form of that name.
 
 Contribution folder contents should be as follows:
-```
-Folder or File                 Contents
----------------------------------------------------------------------------
-File(1)                        Class Descriptor or other file or subfolder
-...
-File(n)                        Class Descriptor or other file or subfolder
 
-README.md                      Readme file - see below
---------------------------------------------------------------------------
-```
+<table cellspacing=0 border=0>
+	<tr>
+		<td ><b>FOLDER OR FILE</b></td>
+		<td><b>CONTENTS</b></td>
+	</tr>
+	
+	<tr>
+		<td>File(1)</td>
+		<td> Class Descriptor or other file or subfolder</td>
+	</tr>
+	
+	<tr>
+		<td>. . .</td>
+		<td> </td>
+	</tr>	
+	
+	<tr>
+		<td>File(n)</td>
+		<td> Class Descriptor or other file or subfolder</td>
+	</tr>
+	
+	<tr>
+		<td>README.md</td>
+		<td>Readme file - see below</td>
+	</tr>
+</table>
+
 In general, the contents of a contribution folder may be structured in whatever way is appropriate for the contributed material.  Content may include Class Descriptors, the README file, other files, and subfolders.
 
 ### Class Descriptors
@@ -84,7 +136,7 @@ Pull Requests without DCO certifications will not be accepted by the Repository 
 
 The required Pull Request text is as follows:	
 
-	The entire content of this Pull Request complies with 	the Linux Developer Certificate of Origin, the text of which is at 	https://developercertificate.org/. <Full name> <email>
+>	The entire content of this Pull Request complies with 	the Linux Developer Certificate of Origin, the text of which is at 	https://developercertificate.org/. (Add full name and email)
 
 ### Submission Contents
 For your first submission, you'll need to create your submission folder.  Please build it in the format described above.  Otherwise, the submission should simply contain the material to be included in your contribution folder.  
