@@ -8,18 +8,11 @@
 
 ## License for Use
 
-The file(s) in this repository are licensed under the Apache License, Version 2.0 (the "License"); 
-you may not use these files except in compliance with the License. 
-The text of the License is at:
-
-[http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0) .
+This project is licensed under the 0BSD License - see the LICENSE.txt file for details.
 
 ## Indemnification
 
-Unless required by applicable law or agreed to in writing, 
-software distributed under the License is distributed on an "AS IS" BASIS, 
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
-See the License for the specific language governing permissions and limitations under the License.
+Software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
 
 ## OCA Alliance Open Source Guidelines
 
@@ -38,9 +31,10 @@ contributions/[contributorName(1)]    Contribution folder
 ...	 	
 contributions/[contributorName(n)]    Contribution folder 				 
  					
-License.txt                           Copy of Apache 2.0 license	
-ClassDescriptorSchema.json            JSON Schema for the class descriptor
-README.md                             Readme file 
+LICENSE.txt                           Copy of software license	
+README.md                             Readme file
+
+ClassDescriptorSchema.json            JSON Schema for the class descriptor 
 --------------------------------------------------------------
 ```
 ## Contribution folders
@@ -107,4 +101,8 @@ The required Pull Request text is as follows:
 	https://developercertificate.org/. <Full name> <email>
 
 ## Submission Contents
-For your first submission, you'll need to create your submission folder.  Please build it in the format described above.  Otherwise, the submission should simply contain the material to be included in your contribution folder.
+For your first submission, you'll need to create your submission folder.  Please build it in the format described above.  Otherwise, the submission should simply contain the material to be included in your contribution folder.  
+
+Don't forget to include the Developer's Certificate of Origin in your pull requests.
+
+Thanks for your support of the OCA Ecosystem.
