@@ -22,52 +22,16 @@ Full guidelines for use of and contribution to OCA Alliance open-source software
 
 This repository has the following structure:
 
-<table cellspacing=0 cellpadding=0 border=0>
-	<tr>
-		<td ><b>FOLDER OR FILE</b></td>
-		<td><b>CONTENTS</b></td>
-	</tr>
-	
-	<tr>
-		<td>contributions</td>
-		<td>Contribution folders</td>
-	</tr>
-	
-	<tr>
-		<td>contributions/contributorName(1)</td>
-		<td>Contribution folder 1</td>
-	</tr>
-	
-	<tr>
-		<td><b>. . .</b></td>
-		<td></td>
-	</tr>	
-	
-	<tr>
-		<td>contributions/contributorName(n)</td>
-		<td>Contribution folder n</td>
-	</tr>
-	
-	<tr>
-		<td>LICENSE.txt</td>
-		<td>Copy of software license</td>
-	</tr>
-	
-	<tr>
-		<td>README.md</td>
-		<td>Readme file</td>
-	</tr>
-	
-	<tr>
-		<td>schema</td>
-		<td>Directory containing schema utilities</td>
-	</tr>
-	
-	<tr>
-		<td>schema/schema.json</td>
-		<td>JSON Schema for the class descriptor</td>
-	</tr>
-</table>
+| **FOLDER OR FILE**               | **CONTENTS**              |
+| :--------------------------------| :------------------------ |
+| contributions  | Container for all contribution subfolders   |
+| contributions/contributorName(1) | Contribution folder (1)   |
+| contributions/contributorName(n) | Contribution folder (n)   |
+| LICENSE.txt                      | Copy of software license  |
+| DCO.txt | Copy of Developer's Certificate of Origin to use   |
+| README.md                        | This file                 |
+
+
 
 ### Contribution folders
 
@@ -75,33 +39,13 @@ Each contributor has their own folder.  The folder's name is the name of the ent
 
 Contribution folder contents should be as follows:
 
-<table cellspacing=0 border=0>
-	<tr>
-		<td ><b>FOLDER OR FILE</b></td>
-		<td><b>CONTENTS</b></td>
-	</tr>
+| FOLDER OR FILE | CONTENTS                                    |
+| :--------------| :------------------------------------------ |
+| File(1)        | Class Descriptor or other file or subfolder |
+| ...            |                                             |
+| File(n)        | Class Descriptor or other file or subfolder |
+| README.md      | Readme file                                 |
 	
-	<tr>
-		<td>File(1)</td>
-		<td> Class Descriptor or other file or subfolder</td>
-	</tr>
-	
-	<tr>
-		<td>. . .</td>
-		<td> </td>
-	</tr>	
-	
-	<tr>
-		<td>File(n)</td>
-		<td> Class Descriptor or other file or subfolder</td>
-	</tr>
-	
-	<tr>
-		<td>README.md</td>
-		<td>Readme file - see below</td>
-	</tr>
-</table>
-
 In general, the contents of a contribution folder may be structured in whatever way is appropriate for the contributed material.  Content may include Class Descriptors, the README file, other files, and subfolders.
 
 ### Class Descriptors
