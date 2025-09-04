@@ -145,6 +145,31 @@
           "type": "string"
         },
         "type": {
+          "const": "typedef"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$"
+        },
+        "target": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9<>,[\\]]+$"
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "target"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "type": {
           "const": "ControlClass"
         },
         "name": {

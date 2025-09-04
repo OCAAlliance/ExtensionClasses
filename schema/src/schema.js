@@ -88,5 +88,6 @@ export const Schema = z.discriminatedUnion("type", [
     Enum8Schema,
     Enum16Schema,
     StructSchema,
+    TypeDefSchema,
     ControlClassSchema,
 ]);
