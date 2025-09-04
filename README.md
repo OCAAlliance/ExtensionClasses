@@ -50,7 +50,7 @@ In general, the contents of a contribution folder may be structured in whatever 
 
 ### Class Descriptors
 
-A class Descriptor is a file in JSON format that describes one or more AES70 classes or datatypes.  A JSON schema that defines this format is on this repository's home page, **[here](schema/schema.json)**.
+A class Descriptor is a file in JSON format that describes one or more AES70 control classes or datatypes.  A JSON schema that defines this format is on this repository's home page, **[here](schema/schema.json)**.  A guide to constructing class descriptors is **[here](./HowToContribute.md)**.
 
 ### README File
 
