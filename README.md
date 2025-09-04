@@ -50,7 +50,9 @@ In general, the contents of a contribution folder may be structured in whatever 
 
 ### Class Descriptors
 
-A class Descriptor is a file in JSON format that describes one or more AES70 control classes or datatypes.  A JSON schema that defines this format is on this repository's home page, **[here](schema/schema.json)**.  A guide to constructing class descriptors is **[here](./HowToContribute.md)**.
+A Class Descriptor is a file containing a JSON object that describes an AES70 Control Class 
+or Datatype.  A JSON schema that defines the Class Descriptor JSON format is **[here](schema/schema.json)**.  A 
+guide to Class Descriptors is **[here](./ClassDescriptors.md)**.
 
 ### README File
 
@@ -70,7 +72,7 @@ The contribution folder can contain other relevant files - documentation, data, 
 The contribution folder may contain subfolders as required.
 
 ## How To Contribute
-Contributions are welcomed and encouraged.  Anyone may contribute to this project by submitting a Git Pull Request to the project's repository.  No prior authorization is required.  
+Contributions are welcomed and encouraged.  Anyone may contribute to this project by submitting a Git Pull Request to the project's repository.  No prior authorization is required. 
 
 ### Developer Certificate of Origin 
 
@@ -80,9 +82,10 @@ Pull Requests without DCO certifications will not be accepted by the Repository 
 
 The required Pull Request text is as follows:	
 
->	The entire content of this Pull Request complies with 	the Linux Developer Certificate of Origin, the text of which is at 	https://developercertificate.org/. (Add full name and email)
+>	The entire content of this Pull Request complies with the Linux Developer Certificate of Origin, the text of which is at 	https://developercertificate.org/. (Add full name and email)
 
 ### Submission Contents
+
 For your first submission, you'll need to create your submission folder.  Please build it in the format described above.  Otherwise, the submission should simply contain the material to be included in your contribution folder.  
 
 Don't forget to include the Developer's Certificate of Origin in your Pull Request comments.
