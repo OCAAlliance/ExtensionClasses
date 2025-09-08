@@ -120,7 +120,7 @@
               },
               "type": {
                 "type": "string",
-                "pattern": "^[a-zA-Z0-9]+$"
+                "pattern": "^[a-zA-Z0-9<>,[\\]]+$"
               }
             },
             "required": [
@@ -135,6 +135,31 @@
         "type",
         "name",
         "properties"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "type": {
+          "const": "typedef"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$"
+        },
+        "target": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9<>,[\\]]+$"
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "target"
       ],
       "additionalProperties": false
     },
@@ -197,7 +222,7 @@
               },
               "type": {
                 "type": "string",
-                "pattern": "^[a-zA-Z0-9]+$"
+                "pattern": "^[a-zA-Z0-9<>,[\\]]+$"
               },
               "id": {
                 "type": "object",
@@ -243,10 +268,6 @@
                 "type": "string",
                 "pattern": "^[a-zA-Z0-9]+$"
               },
-              "type": {
-                "type": "string",
-                "pattern": "^[a-zA-Z0-9]+$"
-              },
               "id": {
                 "type": "object",
                 "properties": {
@@ -284,7 +305,7 @@
                     },
                     "type": {
                       "type": "string",
-                      "pattern": "^[a-zA-Z0-9]+$"
+                      "pattern": "^[a-zA-Z0-9<>,[\\]]+$"
                     }
                   },
                   "required": [
@@ -308,7 +329,7 @@
                     },
                     "type": {
                       "type": "string",
-                      "pattern": "^[a-zA-Z0-9]+$"
+                      "pattern": "^[a-zA-Z0-9<>,[\\]]+$"
                     }
                   },
                   "required": [
@@ -321,7 +342,6 @@
             },
             "required": [
               "name",
-              "type",
               "id",
               "arguments",
               "return_values"
@@ -338,10 +358,6 @@
                 "type": "string"
               },
               "name": {
-                "type": "string",
-                "pattern": "^[a-zA-Z0-9]+$"
-              },
-              "type": {
                 "type": "string",
                 "pattern": "^[a-zA-Z0-9]+$"
               },
@@ -380,7 +396,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "pattern": "^[a-zA-Z0-9]+$"
+                    "pattern": "^[a-zA-Z0-9<>,[\\]]+$"
                   }
                 },
                 "required": [
@@ -392,7 +408,6 @@
             },
             "required": [
               "name",
-              "type",
               "id",
               "argument"
             ],
