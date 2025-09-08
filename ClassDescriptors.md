@@ -4,7 +4,7 @@ A Class Descriptor is a file containing a JSON object
 that defines the signature of an AES70 Control Class or Datatype.  This document
 explains the format of the Class Descriptor and associated Datatypes.
 
-## Submitting Class Descriptors to this repository.
+## Submitting Class Descriptors to this repository
 
 Please see **How To Contribute** in the [main README](./README.md).
 
@@ -85,7 +85,7 @@ in the AES70-1 standard.
   
 #### `Event Descriptor` 
 
-** TBD **
+**TBD:  like method without return values**
 
 #### `ElementID`  
 
