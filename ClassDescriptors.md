@@ -1,6 +1,6 @@
 # Class Descriptors
 
-A Class Descriptor is a file containing a JSON object 
+A Class Descriptor is a file containing a JSON object   
 that defines the signature of an AES70 Control Class or Datatype.  This document
 explains the format of the Class Descriptor and associated Datatypes.
 
