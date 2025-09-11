@@ -36,6 +36,16 @@ function makeEnum(name, valueType) {
 export const Enum8Schema = makeEnum('enum8', Uint8Schema);
 export const Enum16Schema = makeEnum('enum16', Uint16Schema);
 
+const allBits16 = new Array(16).fill(1).map((one, index) => 1 << index);
+export const Bitset16Schema = makeObject({
+        type: z.literal('bitset16'),
+        name: IdentifierSchema,
+        bits: z.array(makeObject({
+            name: IdentifierSchema,
+            value: z.union(allBits16.map((value) => z.literal(value))),
+        })),
+    });
+
 export const StructSchema = makeObject({
     type: z.literal('struct'),
     name: IdentifierSchema,
@@ -88,6 +98,7 @@ export const ControlClassSchema = makeObject({
 export const Schema = z.discriminatedUnion("type", [
     Enum8Schema,
     Enum16Schema,
+    Bitset16Schema,
     StructSchema,
     TypeDefSchema,
     ControlClassSchema,

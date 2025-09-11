@@ -110,6 +110,99 @@
           "type": "string"
         },
         "type": {
+          "const": "bitset16"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z0-9]+$"
+        },
+        "bits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "comment": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9]+$"
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "const": 1
+                  },
+                  {
+                    "const": 2
+                  },
+                  {
+                    "const": 4
+                  },
+                  {
+                    "const": 8
+                  },
+                  {
+                    "const": 16
+                  },
+                  {
+                    "const": 32
+                  },
+                  {
+                    "const": 64
+                  },
+                  {
+                    "const": 128
+                  },
+                  {
+                    "const": 256
+                  },
+                  {
+                    "const": 512
+                  },
+                  {
+                    "const": 1024
+                  },
+                  {
+                    "const": 2048
+                  },
+                  {
+                    "const": 4096
+                  },
+                  {
+                    "const": 8192
+                  },
+                  {
+                    "const": 16384
+                  },
+                  {
+                    "const": 32768
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "value"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": [
+        "type",
+        "name",
+        "bits"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "comment": {
+          "type": "string"
+        },
+        "type": {
           "const": "struct"
         },
         "name": {
