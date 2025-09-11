@@ -56,7 +56,7 @@ export const ClassIdSchema = z.string().regex(/^\d+(\.\d+)*$/);
 export const CIDSchema = z.string().regex(/^[a-fA-F0-9]{6}$/)
 
 export const ControlClassSchema = makeObject({
-    type: z.literal('ControlClass'),
+    type: z.literal('control_class'),
     name: IdentifierSchema,
     parent: IdentifierSchema,
     classid: z.union([

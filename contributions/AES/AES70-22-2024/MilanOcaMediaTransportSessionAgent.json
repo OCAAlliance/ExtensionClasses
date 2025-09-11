@@ -1,5 +1,5 @@
 {
-    "type": "ControlClass",
+    "type": "control_class",
     "name": "MilanOcaMediaTransportSessionAgent",
     "parent": "OcaMediaTransportSessionAgent",
     "classid": {

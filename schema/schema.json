@@ -170,7 +170,7 @@
           "type": "string"
         },
         "type": {
-          "const": "ControlClass"
+          "const": "control_class"
         },
         "name": {
           "type": "string",

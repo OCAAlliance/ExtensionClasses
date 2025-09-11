@@ -33,7 +33,7 @@ defines the formats of each of these and a few associated datatypes.
 | Property Name 	|  Property Type		| Description	| 
 | :-------------- | :---------------- | :-----------|
 | `name`					| string     				| name of Control Class	|
-| `type`	  			| string constant   | "ControlClass" 				|
+| `type`	  			| string constant   | "control_class" 				|
 | `parent`				| string 		| Name of AES70 class (standard or custom) from which this class is subclassed |
 | `comment`   		| string 												| (optional) descriptive comment 	|
 | `classid`     	| `ClassID`     		| see below	|
