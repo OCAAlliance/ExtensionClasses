@@ -29,6 +29,7 @@ function makeEnum(name, valueType) {
             name: IdentifierSchema,
             value: valueType,
         })),
+        extension_base: valueType.optional(),
     });
 }
 

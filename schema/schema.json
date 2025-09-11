@@ -38,6 +38,11 @@
             ],
             "additionalProperties": false
           }
+        },
+        "extension_base": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
         }
       },
       "required": [
@@ -84,6 +89,11 @@
             ],
             "additionalProperties": false
           }
+        },
+        "extension_base": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 65535
         }
       },
       "required": [
