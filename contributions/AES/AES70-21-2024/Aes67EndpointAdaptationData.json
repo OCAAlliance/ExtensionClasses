@@ -1,0 +1,61 @@
+{
+    "type": "struct",
+    "name": "Aes67EndpointAdaptationData",
+    "properties": [
+        {
+            "name": "IPParameters",
+            "type": "OcaList<Aes67EndpointIPParameters>",
+            "comment": "UDP/IP parameters. In a Redundancy Scheme, an independent set of these parameters shall be defined for each network interface used."
+        },
+        {
+            "name": "PayloadType",
+            "type": "OcaUint8",
+            "comment": "RTP payload type"
+        },
+        {
+            "name": "RtpTimestampOffset",
+            "type": "OcaUint32",
+            "comment": "RTP timestamp offset. Shall be zero for ST2110-30 senders."
+        },
+        {
+            "name": "TimeSkewMaxTolerated",
+            "type": "OcaTimeInterval",
+            "comment": "Maximum tolerated skew. Only used for redundant streams."
+        },
+        {
+            "name": "RemoteEndpointName",
+            "type": "OcaBlob",
+            "comment": "External ID of remote endpoint, if any. Remote endpoint name as published on the network."
+        },
+        {
+            "name": "RemoteControlType",
+            "type": "OcaString",
+            "comment": "Remote endpoint connection management type. Type of control used by remote endpoint."
+        },
+        {
+            "name": "TransmissionCapabilities",
+            "type": "Aes67StreamTransmissionCapabilities",
+            "comment": "Transmission type capability of this Endpoint."
+        },
+        {
+            "name": "PresentationTimeOffset",
+            "type": "OcaTimeInterval",
+            "comment": "Presentation Time Offset (called Link Offset in AES67). New in this subclass."
+        },
+        {
+            "name": "MediaInfo",
+            "type": "OcaString",
+            "comment": "Media information (optional). Application-specific text description of stream."
+        },
+        {
+            "name": "SubmittedSDP",
+            "type": "OcaSDPString",
+            "comment": "Submitted SDP. SDP string supplied to the most recent call to SubmitSDP()."
+        },
+        {
+            "name": "ActiveSDP",
+            "type": "OcaSDPString",
+            "comment": "Active SDP. SDP string currently in effect for the endpoint."
+        }
+    ]
+}

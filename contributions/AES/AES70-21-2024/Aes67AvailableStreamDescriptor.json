@@ -1,0 +1,62 @@
+{
+    "type": "struct",
+    "name": "Aes67AvailableStreamDescriptor",
+    "comment": "Descriptor of an AES67 stream discovered from external sources. Uniqueness is defined by the composite key (IDExternal, SourceID), not by IDExternal alone.",
+    "properties": [
+        {
+            "name": "IDExternal",
+            "type": "OcaBlob",
+            "comment": "External ID of endpoint as provided by the source. This value is only unique within the context of SourceID."
+        },
+        {
+            "name": "Direction",
+            "type": "OcaIODirection",
+            "comment": "Input or output stream direction."
+        },
+        {
+            "name": "AlignmentLevel",
+            "type": "OcaDBFS",
+            "comment": "Alignment level of the stream endpoint. Optional if available."
+        },
+        {
+            "name": "CurrentStreamMode",
+            "type": "OcaMediaStreamMode",
+            "comment": "Current stream mode."
+        },
+        {
+            "name": "SecurityType",
+            "type": "OcaSecurityType",
+            "comment": "Security type of this stream, if any."
+        },
+        {
+            "name": "StreamCastMode",
+            "type": "OcaMediaStreamCastMode",
+            "comment": "Unicast or multicast."
+        },
+        {
+            "name": "AdaptationData",
+            "type": "OcaTypedBlob<Aes67EndpointAdaptationData>",
+            "comment": "AES67 adaptation-specific data."
+        },
+        {
+            "name": "SDPString",
+            "type": "OcaSDPString",
+            "comment": "SDP string if available."
+        },
+        {
+            "name": "SIPString",
+            "type": "OcaString",
+            "comment": "SIP string if available."
+        },
+        {
+            "name": "SourceID",
+            "type": "OcaBlob",
+            "comment": "Identifier of source catalog/announcement that provided this stream (e.g. NMOS registry, SAP domain). Together with IDExternal, this forms the unique stream identity."
+        },
+        {
+            "name": "Timestamp",
+            "type": "OcaTime",
+            "comment": "Time when this stream information was recorded or created."
+        }
+    ]
+}
