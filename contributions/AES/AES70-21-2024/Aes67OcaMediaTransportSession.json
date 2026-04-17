@@ -25,7 +25,7 @@
         {
             "name": "AdaptationData",
             "type": "OcaTypedBlob<OcaParameterRecord>",
-            "comment": "Adaptation-specific data. For AES67 this OcaParameterRecord contains SIP fields."
+            "comment": "SIP parameter record used for session negotiation and control."
         },
         {
             "name": "Connections",
