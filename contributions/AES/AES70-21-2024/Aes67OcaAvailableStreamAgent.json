@@ -1,0 +1,67 @@
+{
+    "type": "control_class",
+    "name": "Aes67OcaMediaTransportSessionAgent",
+    "parent": "OcaAgent",
+    "classid": {
+        "cid": "000B5E",
+        "suffix": "2101"
+    },
+    "properties": [
+        {
+            "id": { "level": 3, "index": 1 },
+            "name": "Streams",
+            "type": "OcaList<Aes67AvailableStreamDescriptor>"
+        }
+    ],
+    "methods": [
+        {
+            "id": { "level": 3, "index": 1 },
+            "name": "GetStreams",
+            "arguments": [],
+            "return_values": [
+                {
+                    "name": "Streams",
+                    "type": "OcaList<Aes67AvailableStreamDescriptor>"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": { "level": 3, "index": 1 },
+            "name": "StreamAdded",
+            "comment": "Emitted when a newly discovered available stream is added to the catalog.",
+            "argument": {
+                "name": "Stream",
+                "type": "Aes67AvailableStreamDescriptor"
+            }
+        },
+        {
+            "id": { "level": 3, "index": 2 },
+            "name": "StreamChanged",
+            "comment": "Emitted when metadata of an existing available stream changes.",
+            "argument": {
+                "name": "Stream",
+                "type": "Aes67AvailableStreamDescriptor"
+            }
+        },
+        {
+            "id": { "level": 3, "index": 3 },
+            "name": "StreamRemoved",
+            "comment": "Emitted when a previously available stream is no longer present.",
+            "argument": {
+                "name": "Stream",
+                "type": "Aes67AvailableStreamDescriptor"
+            }
+        },
+        {
+            "id": { "level": 3, "index": 4 },
+            "name": "StreamsReplaced",
+            "comment": "Emitted when the full stream catalog is replaced after a resync or source refresh.",
+            "argument": {
+                "name": "Streams",
+                "type": "OcaList<Aes67AvailableStreamDescriptor>"
+            }
+        }
+    ]
+}

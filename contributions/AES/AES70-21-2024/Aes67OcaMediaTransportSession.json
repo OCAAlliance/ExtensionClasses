@@ -1,0 +1,41 @@
+{
+    "type": "struct",
+    "name": "Aes67OcaMediaTransportSession",
+    "properties": [
+        {
+            "name": "IDInternal",
+            "type": "OcaMediaTransportSessionID",
+            "comment": "Internal ID, unique within OcaMediaTransportSessionAgent instance."
+        },
+        {
+            "name": "IDExternal",
+            "type": "OcaBlob",
+            "comment": "External ID published to the network. Format is adaptation-specific."
+        },
+        {
+            "name": "UserLabel",
+            "type": "OcaString",
+            "comment": "Arbitrary text label."
+        },
+        {
+            "name": "StreamingEnabled",
+            "type": "OcaBoolean",
+            "comment": "TRUE if and only if media streaming is allowed."
+        },
+        {
+            "name": "AdaptationData",
+            "type": "OcaTypedBlob<OcaParameterRecord>",
+            "comment": "Adaptation-specific data. For AES67 this OcaParameterRecord contains SIP fields."
+        },
+        {
+            "name": "Connections",
+            "type": "OcaList<OcaMediaTransportSessionConnection>",
+            "comment": "This session's stream connections."
+        },
+        {
+            "name": "ConnectionStates",
+            "type": "OcaMap<OcaMediaTransportSessionConnectionID,OcaMediaTransportSessionConnectionState>",
+            "comment": "State(s) of session connections. Map key is connection ID."
+        }
+    ]
+}

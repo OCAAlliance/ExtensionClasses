@@ -1,0 +1,45 @@
+{
+    "type": "control_class",
+    "name": "Aes67OcaMediaTransportSessionAgent",
+    "parent": "OcaMediaTransportSessionAgent",
+    "classid": {
+        "cid": "000B5E",
+        "suffix": "2101"
+    },
+    "properties": [
+        {
+            "id": { "level": 3, "index": 2 },
+            "name": "Session",
+            "type": "OcaList<Aes67OcaMediaTransportSession>"
+        }
+    ],
+    "methods": [
+        {
+            "id": { "level": 3, "index": 2 },
+            "name": "GetSessions",
+            "arguments": [],
+            "return_values": [
+                {
+                    "name": "Streams",
+                    "type": "OcaList<Aes67AvailableStreamDescriptor>"
+                }
+            ]
+        },
+        {
+            "id": { "level": 3, "index": 3 },
+            "name": "GetSession",
+            "arguments": [
+                {
+                    "name": "ID",
+                    "type": "OcaMediaTransportSessionID"
+                }
+            ],
+            "return_values": [
+                {
+                    "name": "Session",
+                    "type": "Aes67OcaMediaTransportSession"
+                }
+            ]
+        }
+    ]
+}

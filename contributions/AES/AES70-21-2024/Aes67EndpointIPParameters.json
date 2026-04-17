@@ -1,0 +1,46 @@
+{
+    "type": "struct",
+    "name": "Aes67EndpointIPParameters",
+    "properties": [
+        {
+            "name": "NetworkAssignmentID",
+            "type": "OcaID16",
+            "comment": "ID of network assignment to which this set of parameters shall be applied."
+        },
+        {
+            "name": "SourceAddress",
+            "type": "OcaString",
+            "comment": "IP source address."
+        },
+        {
+            "name": "DestinationAddress",
+            "type": "OcaString",
+            "comment": "IP destination address."
+        },
+        {
+            "name": "TimeToLive",
+            "type": "OcaUint8",
+            "comment": "IP Time to Live (TTL)."
+        },
+        {
+            "name": "SourcePort",
+            "type": "OcaUint16",
+            "comment": "UDP source port number."
+        },
+        {
+            "name": "DestinationPort",
+            "type": "OcaUint16",
+            "comment": "UDP destination port number."
+        },
+        {
+            "name": "DSCP",
+            "type": "OcaInt8",
+            "comment": "DSCP parameter (QoS layer 3). -1 means leave up to device implementation."
+        },
+        {
+            "name": "COS",
+            "type": "OcaInt8",
+            "comment": "COS parameter (QoS layer 2). -1 means leave up to device implementation."
+        }
+    ]
+}

@@ -1,0 +1,67 @@
+{
+    "type": "control_class",
+    "name": "Aes67OcaMediaTransportApplication",
+    "parent": "OcaMediaTransportApplication",
+    "classid": {
+        "cid": "000B5E",
+        "suffix": "2100"
+    },
+    "properties": [
+        {
+            "id": { "level": 3, "index": 10 },
+            "name": "Endpoints",
+            "type": "OcaList<Aes67OcaMediaStreamEndpoint>",
+            "comment": "Descriptors of Stream Endpoints that belong to this object."
+        },
+        {
+            "id": { "level": 4, "index": 6 },
+            "name": "AvailableStreamsAgentONo",
+            "type": "OcaONo",
+            "comment": "Object number of associated Aes67AvailableStreamsAgent object, or zero if none."
+        }
+    ],
+    "methods": [
+        {
+            "id": { "level": 4, "index": 1 },
+            "name": "GetEndpointDelayConstraints",
+            "arguments": [],
+            "return_values": []
+        },
+        {
+            "id": { "level": 4, "index": 2 },
+            "name": "GetPresentationTimeOffsetConstraints",
+            "arguments": [],
+            "return_values": []
+        },
+        {
+            "id": { "level": 4, "index": 3 },
+            "name": "SubmitSDP",
+            "arguments": [],
+            "return_values": []
+        },
+        {
+            "id": { "level": 4, "index": 4 },
+            "name": "GetSubmittedSDP",
+            "arguments": [],
+            "return_values": []
+        },
+        {
+            "id": { "level": 4, "index": 5 },
+            "name": "GetActiveSDP",
+            "arguments": [],
+            "return_values": []
+        },
+        {
+            "id": { "level": 4, "index": 6 },
+            "name": "GetAvailableStreamAgentONo",
+            "arguments": [],
+            "return_values": []
+        },
+        {
+            "id": { "level": 4, "index": 7 },
+            "name": "SetAvailableStreamAgentONo",
+            "arguments": [],
+            "return_values": []
+        }
+    ]
+}
