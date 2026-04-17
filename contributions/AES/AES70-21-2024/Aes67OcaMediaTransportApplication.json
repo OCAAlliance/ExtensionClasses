@@ -24,43 +24,118 @@
         {
             "id": { "level": 4, "index": 1 },
             "name": "GetEndpointDelayConstraints",
-            "arguments": [],
-            "return_values": []
+            "arguments": [
+                {
+                    "name": "EndpointID",
+                    "type": "OcaMediaStreamEndpointID"
+                },
+                {
+                    "name": "StreamMode",
+                    "type": "OcaMediaStreamMode"
+                }
+            ],
+            "return_values": [
+                {
+                    "name": "BufferingTimeRange",
+                    "type": "OcaInterval<OcaTimeInterval>"
+                },
+                {
+                    "name": "ProcessingTimeRange",
+                    "type": "OcaInterval<OcaTimeInterval>"
+                }
+            ]
         },
         {
             "id": { "level": 4, "index": 2 },
             "name": "GetPresentationTimeOffsetConstraints",
-            "arguments": [],
-            "return_values": []
+            "arguments": [
+                {
+                    "name": "EndpointID",
+                    "type": "OcaMediaStreamEndpointID"
+                },
+                {
+                    "name": "StreamMode",
+                    "type": "OcaMediaStreamMode"
+                }
+            ],
+            "return_values": [
+                {
+                    "name": "Range",
+                    "type": "OcaInterval<OcaTimeInterval>"
+                },
+                {
+                    "name": "List",
+                    "type": "OcaList<OcaTimeInterval>"
+                }
+            ]
         },
         {
             "id": { "level": 4, "index": 3 },
             "name": "SubmitSDP",
-            "arguments": [],
+            "arguments": [
+                {
+                    "name": "EndpointID",
+                    "type": "OcaMediaStreamEndpointID"
+                },
+                {
+                    "name": "SDPtext",
+                    "type": "OcaSDPString"
+                }
+            ],
             "return_values": []
         },
         {
             "id": { "level": 4, "index": 4 },
             "name": "GetSubmittedSDP",
-            "arguments": [],
-            "return_values": []
+            "arguments": [
+                {
+                    "name": "EndpointID",
+                    "type": "OcaMediaStreamEndpointID"
+                }
+            ],
+            "return_values": [
+                {
+                    "name": "SDPtext",
+                    "type": "OcaSDPString"
+                }
+            ]
         },
         {
             "id": { "level": 4, "index": 5 },
             "name": "GetActiveSDP",
-            "arguments": [],
-            "return_values": []
+            "arguments": [
+                {
+                    "name": "EndpointID",
+                    "type": "OcaMediaStreamEndpointID"
+                }
+            ],
+            "return_values": [
+                {
+                    "name": "SDPtext",
+                    "type": "OcaSDPString"
+                }
+            ]
         },
         {
             "id": { "level": 4, "index": 6 },
             "name": "GetAvailableStreamAgentONo",
             "arguments": [],
-            "return_values": []
+            "return_values": [
+                {
+                    "name": "AvailableStreamsAgentONo",
+                    "type": "OcaONo"
+                }
+            ]
         },
         {
             "id": { "level": 4, "index": 7 },
             "name": "SetAvailableStreamAgentONo",
-            "arguments": [],
+            "arguments": [
+                {
+                    "name": "AvailableStreamsAgentONo",
+                    "type": "OcaONo"
+                }
+            ],
             "return_values": []
         }
     ]
