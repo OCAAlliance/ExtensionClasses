@@ -9,7 +9,7 @@
     "properties": [
         {
             "id": { "level": 3, "index": 2 },
-            "name": "Session",
+            "name": "Sessions",
             "type": "OcaList<Aes67OcaMediaTransportSession>"
         }
     ],
@@ -20,8 +20,8 @@
             "arguments": [],
             "return_values": [
                 {
-                    "name": "Streams",
-                    "type": "OcaList<Aes67AvailableStreamDescriptor>"
+                    "name": "Sessions",
+                    "type": "OcaList<Aes67OcaMediaTransportSession>"
                 }
             ]
         },

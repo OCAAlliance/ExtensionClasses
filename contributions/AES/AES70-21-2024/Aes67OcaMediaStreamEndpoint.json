@@ -19,7 +19,7 @@
         },
         {
             "name": "UserLabel",
-            "type": "OcaStribg",
+            "type": "OcaString",
             "comment": "Arbitrary user-settable label for endpoint."
         },
         {
