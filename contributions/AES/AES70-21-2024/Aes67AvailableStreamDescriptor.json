@@ -16,7 +16,7 @@
         {
             "name": "AlignmentLevel",
             "type": "OcaDBFS",
-            "comment": "Alignment level of the stream endpoint. Optional if available."
+            "comment": "Alignment level of the stream endpoint. Optional if available, otherwise NaN."
         },
         {
             "name": "CurrentStreamMode",
@@ -41,12 +41,12 @@
         {
             "name": "SDPString",
             "type": "OcaSDPString",
-            "comment": "SDP string if available."
+            "comment": "SDP string if available, otherwise empty string."
         },
         {
             "name": "SIPString",
             "type": "OcaString",
-            "comment": "SIP string if available."
+            "comment": "SIP string if available, otherwise empty string."
         },
         {
             "name": "SourceID",
