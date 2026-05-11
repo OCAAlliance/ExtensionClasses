@@ -16,3 +16,6 @@
 This folder contains descriptors of extension classes defined by AES standards activity.  Typically, these classes are specified by AES70 Adaptation standards such as AES70-21 (AES67/SMPTE ST 2110 Connection Management) and AES70-22 (Milan Connection Management).
 
 In this folder, each edition of each standard has its own subfolder.  A subfolder's name will be the identifier of the standard it represents, including the publication year suffix - for example, 'AES70-22-2024'.
+
+For nonstandard class identification details (including CID-based ClassID formation), see
+[ClassDescriptors.md](../../ClassDescriptors.md).
