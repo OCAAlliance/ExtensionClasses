@@ -54,6 +54,18 @@ A Class Descriptor is a file containing a JSON object that describes an AES70 Co
 or Datatype.  A JSON schema that defines the Class Descriptor JSON format is **[here](schema/schema.json)**.  A 
 guide to Class Descriptors is **[here](./ClassDescriptors.md)**.
 
+The Class Descriptor guide also defines how nonstandard ClassIDs are formed when using a `CID`,
+quotes the corresponding AES70 text, and includes a worked AES70-20 lineage example:
+`<parent classid words> + 0xFFFF + <cid_hi16> + <cid_lo16> + <suffix>`
+(`OcaClassID` is a list of 16-bit words, so the 24-bit CID is split across two words).
+
+From AES70-1-2024, clause `6.2.2.5.2` (**Lineage Keys of Nonstandard Classes**):
+> "The ClassID of a Nonstandard Class shall have two parts. The first part, i1•i2•i3...ik, shall specify the subtree of standard classes from which the Nonstandard Class subtree inherits. The second part, ik+1•ik+2•ik+3...iN, shall specify the subtree of Nonstandard Classes that inherits from the lowest-level standard class, the one whose index is ik.
+>
+> The nonstandard part of the ClassID shall be prefixed by an Authority ID that identifies the Authority responsible for defining the Nonstandard Class.
+>
+> Thus, a complete Lineage Key for a Nonstandard Class shall be of the form i1•i2•i3...ik, A, ik+1•ik+2•ik+3...ik+n, where k is the number of levels in the standard subtree, and n is the number of levels in the nonstandard subtree."
+
 ### README File
 
 Each contribution README file should begin with information that appropriately identifies the contribution's owner and submitter. Suggested information items include:
