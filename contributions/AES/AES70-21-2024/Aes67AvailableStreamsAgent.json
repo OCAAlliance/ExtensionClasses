@@ -1,6 +1,6 @@
 {
     "type": "control_class",
-    "name": "Aes67OcaAvailableStreamAgent",
+    "name": "Aes67AvailableStreamsAgent",
     "parent": "OcaAgent",
     "classid": {
         "cid": "000B5E",
