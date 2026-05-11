@@ -137,6 +137,22 @@
                 }
             ],
             "return_values": []
+        },
+        {
+            "id": { "level": 4, "index": 8 },
+            "name": "ConnectStreamFromSDPFile",
+            "comment": "Connects an endpoint using SDP file contents. The supplied SDP shall be stored as SubmittedSDP and, when connection succeeds, reflected as ActiveSDP so it is retrievable via GetSubmittedSDP() and GetActiveSDP().",
+            "arguments": [
+                {
+                    "name": "EndpointID",
+                    "type": "OcaMediaStreamEndpointID"
+                },
+                {
+                    "name": "SDPFile",
+                    "type": "OcaSDPString"
+                }
+            ],
+            "return_values": []
         }
     ]
 }
