@@ -64,10 +64,10 @@ in the AES70-1 standard.
 
 When a `CID` is used to derive a nonstandard class identifier, form the full ClassID as:
 
-`<parent classid words> + 0xFFFF + <cid_hi16> + <cid_lo16> + <suffix>`
+`<parent classid words> + 0xFFFF + <cid_hi8> + <cid_lo16> + <suffix>`
 
 This matches `OcaClassID` representation as a list of 16-bit words, so the 24-bit CID is split across two words.
-For CID `0x00BBCC`, use `cid_hi16 = 0x0000` and `cid_lo16 = 0xBBCC`.
+For CID `0x00BBCC`, use `cid_hi8 = 0x00` and `cid_lo16 = 0xBBCC`.
 
 Example standards text (AES70-21 draft, page 14):
 
@@ -75,7 +75,7 @@ Example standards text (AES70-21 draft, page 14):
 >  Aes67OcaMediaTransportSessionAgent, Class ID 1.2.20.A.2101  
 >  Where A is the Authority ID that identifies the Authority responsible for defining the nonstandard classes used in this Standard. A shall be as follows: 0xFFFF00.0x000B5E."
 
-Explicit worked example (AES70-20 lineage):
+Explicit worked example (AES70-21 lineage):
 
 - Parent classid words (from `1.2.20`): `[0x0001, 0x0002, 0x0014]`
 - Nonstandard marker word: `0xFFFF`
