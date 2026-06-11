@@ -1,7 +1,7 @@
 {
     "type": "struct",
-    "name": "Aes67AvailableStreamDescriptor",
-    "comment": "Descriptor of an AES67 stream discovered from external sources. Uniqueness is defined by the composite key (IDExternal, SourceID), not by IDExternal alone.",
+    "name": "Aes67StreamDescriptor",
+    "comment": "Descriptor of an AES67 stream. Uniqueness is defined by the composite key (IDExternal, SourceID), not by IDExternal alone.",
     "properties": [
         {
             "name": "IDExternal",

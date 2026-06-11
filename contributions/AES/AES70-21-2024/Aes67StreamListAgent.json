@@ -1,7 +1,8 @@
 {
     "type": "control_class",
-    "name": "Aes67AvailableStreamsAgent",
+    "name": "Aes67StreamListAgent",
     "parent": "OcaAgent",
+    "comment": "Agent that maintains a catalog of AES67 streams available on the network. Instances shall set the inherited Purpose property to the value 'available-aes67-streams'. Strings beginning with 'oca' are reserved.",
     "classid": {
         "cid": "000B5E",
         "suffix": "2101"
@@ -10,7 +11,7 @@
         {
             "id": { "level": 3, "index": 1 },
             "name": "Streams",
-            "type": "OcaList<Aes67AvailableStreamDescriptor>"
+            "type": "OcaList<Aes67StreamDescriptor>"
         }
     ],
     "methods": [
@@ -21,7 +22,7 @@
             "return_values": [
                 {
                     "name": "Streams",
-                    "type": "OcaList<Aes67AvailableStreamDescriptor>"
+                    "type": "OcaList<Aes67StreamDescriptor>"
                 }
             ]
         }
@@ -30,28 +31,28 @@
         {
             "id": { "level": 3, "index": 1 },
             "name": "StreamAdded",
-            "comment": "Emitted when a newly discovered available stream is added to the catalog.",
+            "comment": "Emitted when a newly discovered stream is added to the catalog.",
             "argument": {
                 "name": "Stream",
-                "type": "Aes67AvailableStreamDescriptor"
+                "type": "Aes67StreamDescriptor"
             }
         },
         {
             "id": { "level": 3, "index": 2 },
             "name": "StreamChanged",
-            "comment": "Emitted when metadata of an existing available stream changes.",
+            "comment": "Emitted when metadata of an existing stream changes.",
             "argument": {
                 "name": "Stream",
-                "type": "Aes67AvailableStreamDescriptor"
+                "type": "Aes67StreamDescriptor"
             }
         },
         {
             "id": { "level": 3, "index": 3 },
             "name": "StreamRemoved",
-            "comment": "Emitted when a previously available stream is no longer present.",
+            "comment": "Emitted when a previously listed stream is no longer present.",
             "argument": {
                 "name": "Stream",
-                "type": "Aes67AvailableStreamDescriptor"
+                "type": "Aes67StreamDescriptor"
             }
         },
         {
@@ -60,7 +61,7 @@
             "comment": "Emitted when the full stream catalog is replaced after a resync or source refresh.",
             "argument": {
                 "name": "Streams",
-                "type": "OcaList<Aes67AvailableStreamDescriptor>"
+                "type": "OcaList<Aes67StreamDescriptor>"
             }
         }
     ]
