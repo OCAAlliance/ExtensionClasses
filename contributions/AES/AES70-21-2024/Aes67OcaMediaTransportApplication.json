@@ -17,7 +17,7 @@
             "id": { "level": 4, "index": 6 },
             "name": "AvailableStreamsAgentONo",
             "type": "OcaONo",
-            "comment": "Object number of associated Aes67AvailableStreamsAgent object, or zero if none."
+            "comment": "Object number of associated Aes67StreamListAgent object, or zero if none. The associated agent describes the list of streams which is available on this network."
         }
     ],
     "methods": [
