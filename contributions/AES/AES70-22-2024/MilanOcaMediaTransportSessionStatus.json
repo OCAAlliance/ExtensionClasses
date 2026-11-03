@@ -7,7 +7,7 @@
             "name": "State"
         },
         {
-            "type": "OcaTypedBlob<MilanSessionStatusAdaptationData>",
+            "type": "OcaEncodedBlob<MilanSessionStatusAdaptationData>",
             "name": "AdaptationData"
         }
     ]

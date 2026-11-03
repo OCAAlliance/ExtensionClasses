@@ -9,7 +9,7 @@
         },
         {
             "name": "MacAddress",
-            "type": "OcaBlobFixedLength<6>",
+            "type": "OcaBlobFixedLen<6>",
             "comment": "Equal to the Stream Destination MAC Address field of the STREAM_INPUT / STREAM_OUTPUT descriptor."
         },
         {
