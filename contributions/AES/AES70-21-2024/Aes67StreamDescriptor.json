@@ -1,12 +1,17 @@
 {
     "type": "struct",
     "name": "Aes67StreamDescriptor",
-    "comment": "Descriptor of an AES67 stream. Uniqueness is defined by the composite key (IDExternal, SourceID), not by IDExternal alone.",
+    "comment": "Datatype of stream registry entries. Fields are essentially the relevant fields of OcaMediaStreamEndpoint, plus a few added items.",
     "properties": [
         {
             "name": "IDExternal",
             "type": "OcaBlob",
-            "comment": "External ID of endpoint as provided by the source. This value is only unique within the context of SourceID."
+            "comment": "External ID of Endpoint."
+        },
+        {
+            "name": "Addresses",
+            "type": "OcaList<Aes67StreamTransportAddress>",
+            "comment": "List of IP addresses and ports of all redundant paths of the stream."
         },
         {
             "name": "Direction",
@@ -16,17 +21,17 @@
         {
             "name": "AlignmentLevel",
             "type": "OcaDBFS",
-            "comment": "Alignment level of the stream endpoint. Optional if available, otherwise NaN."
+            "comment": "Alignment level of the stream endpoint. NaN if not known."
         },
         {
-            "name": "CurrentStreamMode",
+            "name": "StreamMode",
             "type": "OcaMediaStreamMode",
-            "comment": "Current stream mode."
+            "comment": "Stream Mode of the stream."
         },
         {
             "name": "SecurityType",
             "type": "OcaSecurityType",
-            "comment": "Security type of this stream, if any."
+            "comment": "Security type of the stream."
         },
         {
             "name": "StreamCastMode",
@@ -36,27 +41,27 @@
         {
             "name": "AdaptationData",
             "type": "OcaTypedBlob<Aes67EndpointAdaptationData>",
-            "comment": "AES67 adaptation-specific data."
+            "comment": "AES70-21 Adaptation-specific data."
         },
         {
             "name": "SDPString",
             "type": "OcaSDPString",
-            "comment": "SDP string if available, otherwise empty string."
+            "comment": "SDP string, if available."
         },
         {
             "name": "SIPString",
             "type": "OcaString",
-            "comment": "SIP string if available, otherwise empty string."
+            "comment": "SIP string, if available."
         },
         {
-            "name": "SourceID",
+            "name": "InfoSource",
             "type": "OcaBlob",
-            "comment": "Identifier of source catalog/announcement that provided this stream (e.g. NMOS registry, SAP domain). Together with IDExternal, this forms the unique stream identity."
+            "comment": "Identifier of source of data for this entry, if available."
         },
         {
-            "name": "Timestamp",
+            "name": "TimeStamp",
             "type": "OcaTime",
-            "comment": "Time when this stream information was recorded or created."
+            "comment": "Time this entry created or last updated."
         }
     ]
 }

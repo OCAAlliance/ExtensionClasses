@@ -1,0 +1,17 @@
+{
+    "type": "struct",
+    "name": "Aes67StreamTransportAddress",
+    "comment": "Transport address of a unicast Endpoint or multicast group: IP address plus UDP port.",
+    "properties": [
+        {
+            "name": "IPAddress",
+            "type": "OcaVariant<OcaIP4Address,OcaIP6Address>",
+            "comment": "Address of unicast Endpoint or multicast group."
+        },
+        {
+            "name": "Port",
+            "type": "OcaUint16",
+            "comment": "IP UDP port number of unicast or multicast."
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "type": "struct",
+    "name": "RegistryReplacedEventData",
+    "comment": "Event data for Aes67StreamEndpointRegistry.RegistryReplaced.",
+    "properties": [
+        {
+            "name": "Registry",
+            "type": "OcaList<Aes67StreamDescriptor>",
+            "comment": "All the entries."
+        }
+    ]
+}

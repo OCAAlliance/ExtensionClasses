@@ -1,0 +1,27 @@
+{
+    "type": "bitset16",
+    "name": "Aes67StreamTransmissionCapabilities",
+    "comment": "OcaBitset16 alias. Whether the endpoint is capable of multicast transmission, unicast transmission, or both, and which security types it supports. Bits not defined here shall be set to zero; their definitions are reserved.",
+    "bits": [
+        {
+            "name": "UnicastCapable",
+            "value": 1,
+            "comment": "Endpoint supports unicast connections."
+        },
+        {
+            "name": "MulticastCapable",
+            "value": 2,
+            "comment": "Endpoint supports multicast connections."
+        },
+        {
+            "name": "InsecureCapable",
+            "value": 4,
+            "comment": "Endpoint supports security type None."
+        },
+        {
+            "name": "DefaultSecurityCapable",
+            "value": 8,
+            "comment": "Endpoint supports security type Default."
+        }
+    ]
+}

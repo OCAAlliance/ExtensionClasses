@@ -1,0 +1,17 @@
+{
+    "type": "struct",
+    "name": "RegistryEntryChangedEventData",
+    "comment": "Event data for Aes67StreamEndpointRegistry.RegistryChanged.",
+    "properties": [
+        {
+            "name": "ChangeType",
+            "type": "OcaPropertyChangeType",
+            "comment": "add, change, or delete."
+        },
+        {
+            "name": "Entry",
+            "type": "Aes67StreamDescriptor",
+            "comment": "The entry in question."
+        }
+    ]
+}

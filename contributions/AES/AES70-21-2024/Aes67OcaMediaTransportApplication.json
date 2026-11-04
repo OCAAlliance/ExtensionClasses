@@ -15,9 +15,15 @@
         },
         {
             "id": { "level": 4, "index": 6 },
-            "name": "AvailableStreamsAgentONo",
+            "name": "SSRONo",
             "type": "OcaONo",
-            "comment": "Object number of associated Aes67StreamListAgent object, or zero if none. The associated agent describes the list of streams which is available on this network."
+            "comment": "Object number of related SSR (Aes67StreamEndpointRegistry), or zero if none."
+        },
+        {
+            "id": { "level": 4, "index": 7 },
+            "name": "SDPAgentONo",
+            "type": "OcaONo",
+            "comment": "Object number of related SDP Agent (Aes67SDPAgent), or zero if none."
         }
     ],
     "methods": [
@@ -118,21 +124,23 @@
         },
         {
             "id": { "level": 4, "index": 6 },
-            "name": "GetAvailableStreamAgentONo",
+            "name": "GetSSRONo",
+            "comment": "Optional method. Gets the SSR object number.",
             "arguments": [],
             "return_values": [
                 {
-                    "name": "AvailableStreamsAgentONo",
+                    "name": "SSRONo",
                     "type": "OcaONo"
                 }
             ]
         },
         {
             "id": { "level": 4, "index": 7 },
-            "name": "SetAvailableStreamAgentONo",
+            "name": "SetSSRONo",
+            "comment": "Optional method. Sets the SSR object number.",
             "arguments": [
                 {
-                    "name": "AvailableStreamsAgentONo",
+                    "name": "SSRONo",
                     "type": "OcaONo"
                 }
             ],
@@ -140,16 +148,47 @@
         },
         {
             "id": { "level": 4, "index": 8 },
-            "name": "ConnectStreamFromSDPFile",
-            "comment": "Connects an endpoint using SDP file contents. The supplied SDP shall be stored as SubmittedSDP and, when connection succeeds, reflected as ActiveSDP so it is retrievable via GetSubmittedSDP() and GetActiveSDP().",
+            "name": "GetSDPAgentONo",
+            "comment": "Optional method. Gets the SDP Agent object number.",
+            "arguments": [],
+            "return_values": [
+                {
+                    "name": "SDPAgentONo",
+                    "type": "OcaONo"
+                }
+            ]
+        },
+        {
+            "id": { "level": 4, "index": 9 },
+            "name": "SetSDPAgentONo",
+            "comment": "Optional method. Sets the SDP Agent object number.",
+            "arguments": [
+                {
+                    "name": "SDPAgentONo",
+                    "type": "OcaONo"
+                }
+            ],
+            "return_values": []
+        },
+        {
+            "id": { "level": 4, "index": 10 },
+            "name": "ConfigureEndpointFromSDP",
+            "comment": "Optional method. Configures an Endpoint based on an SDP string. StreamID selects a stream from a multistream SDP spec (UDP port number); may be zero for single-stream SDP.",
             "arguments": [
                 {
                     "name": "EndpointID",
-                    "type": "OcaMediaStreamEndpointID"
+                    "type": "OcaMediaStreamEndpointID",
+                    "comment": "IDInternal of Endpoint to be configured."
                 },
                 {
-                    "name": "SDPFile",
-                    "type": "OcaSDPString"
+                    "name": "SDPString",
+                    "type": "OcaSDPString",
+                    "comment": "The SDP string."
+                },
+                {
+                    "name": "StreamID",
+                    "type": "OcaUint16",
+                    "comment": "ID to select stream from multistream SDP spec."
                 }
             ],
             "return_values": []
