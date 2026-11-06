@@ -1,0 +1,42 @@
+{
+    "type": "enum8",
+    "name": "Aes67MediaIDType",
+    "comment": "Type of MediaID used to select a Media Description within an SDP string for ConfigureEndpointFromSDP(...).",
+    "enumerators": [
+        {
+            "name": "None",
+            "value": 0,
+            "comment": "Media ID type is not specified. Allowed when the SDP string contains exactly one Media Description."
+        },
+        {
+            "name": "Ordinal",
+            "value": 1,
+            "comment": "Media Description position (1-n) in the Session Descriptor. Numeric value in string format."
+        },
+        {
+            "name": "Label",
+            "value": 2,
+            "comment": "Media Description's 'label' attribute value."
+        },
+        {
+            "name": "Mid",
+            "value": 3,
+            "comment": "Media Description's 'mid' attribute value."
+        },
+        {
+            "name": "PortNo",
+            "value": 4,
+            "comment": "Media Stream's UDP port number. Numeric value in string format."
+        },
+        {
+            "name": "TransportAddress4",
+            "value": 5,
+            "comment": "Media Stream's IPv4 address + UDP port number, as IPv4address:portnumber."
+        },
+        {
+            "name": "TransportAddress6",
+            "value": 6,
+            "comment": "IPv6 address + UDP port number as [IPv6address]:portnumber. Included for future use; not used for AES67, which does not support IPv6."
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "type": "struct",
+    "name": "Aes67RegistryRebuiltEventData",
+    "comment": "Event data for Aes67StreamEndpointRegistry.RegistryRebuilt.",
+    "properties": [
+        {
+            "name": "Registry",
+            "type": "OcaList<Aes67StreamEndpointDescriptor>",
+            "comment": "All the entries after rebuild is complete."
+        }
+    ]
+}

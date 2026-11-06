@@ -5,12 +5,12 @@
         {
             "name": "IPParameters",
             "type": "OcaList<Aes67EndpointIPParameters>",
-            "comment": "UDP/IP parameters. In a Redundancy Scheme, an independent set of these parameters shall be defined for each network interface used."
+            "comment": "UDP/IP parameters. In a Redundancy Scheme, an independent set of these parameters shall be defined for each network interface used. Each parameter set shall be represented by one Aes67EndpointIPParameters list item."
         },
         {
             "name": "PayloadType",
             "type": "OcaUint8",
-            "comment": "RTP payload type"
+            "comment": "RTP payload type."
         },
         {
             "name": "RtpTimestampOffset",
@@ -20,7 +20,7 @@
         {
             "name": "TimeSkewMaxTolerated",
             "type": "OcaTimeInterval",
-            "comment": "Maximum tolerated skew. Only used for redundant streams."
+            "comment": "Maximum tolerated skew. Only used for redundant Media Streams."
         },
         {
             "name": "RemoteEndpointName",
@@ -35,7 +35,7 @@
         {
             "name": "TransmissionCapabilities",
             "type": "Aes67StreamTransmissionCapabilities",
-            "comment": "Transmission type capability of this Endpoint."
+            "comment": "Transmission capabilities of this Endpoint."
         },
         {
             "name": "PresentationTimeOffset",
@@ -45,17 +45,22 @@
         {
             "name": "MediaInfo",
             "type": "OcaString",
-            "comment": "Media information (optional). Application-specific text description of stream."
-        },
-        {
-            "name": "SubmittedSDP",
-            "type": "OcaSDPString",
-            "comment": "Submitted SDP. SDP string supplied to the most recent call to SubmitSDP()."
+            "comment": "Media information (optional). Application-specific description of Media Stream."
         },
         {
             "name": "ActiveSDP",
             "type": "OcaSDPString",
-            "comment": "Active SDP. SDP string currently in effect for the endpoint."
+            "comment": "Active SDP string currently in effect for the Endpoint. Set by ConfigureEndpointFromSDP(...)."
+        },
+        {
+            "name": "MediaIDType",
+            "type": "Aes67MediaIDType",
+            "comment": "Type of Media ID. Set by ConfigureEndpointFromSDP(...)."
+        },
+        {
+            "name": "MediaID",
+            "type": "OcaString",
+            "comment": "Media ID of configured stream. Type is indicated by MediaIDType. Set by ConfigureEndpointFromSDP(...)."
         }
     ]
 }

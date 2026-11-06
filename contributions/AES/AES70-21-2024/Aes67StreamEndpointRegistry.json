@@ -2,7 +2,7 @@
     "type": "control_class",
     "name": "Aes67StreamEndpointRegistry",
     "parent": "OcaAgent",
-    "comment": "General-purpose stream Endpoint registry. An instance with RegistryRole 'Stream Source Registry' implements the optional Stream Source Registry (SSR).",
+    "comment": "Stores a list of Stream Descriptors, each describing a Stream Endpoint that is a potential source or sink in the network. An instance associated via Aes67OcaMediaTransportApplication.StreamSourceRegistryONo implements the optional Stream Source Registry (SSR).",
     "classid": {
         "cid": "000B5E",
         "suffix": "2102"
@@ -10,149 +10,114 @@
     "properties": [
         {
             "id": { "level": 3, "index": 1 },
-            "name": "RegistryRole",
-            "type": "OcaString",
-            "comment": "Application role of this instance. For the SSR, shall be 'Stream Source Registry'."
-        },
-        {
-            "id": { "level": 3, "index": 2 },
             "name": "Registry",
-            "type": "OcaList<Aes67StreamDescriptor>",
-            "comment": "Registry contents."
+            "type": "OcaList<Aes67StreamEndpointDescriptor>",
+            "comment": "Registry entries."
         }
     ],
     "methods": [
         {
             "id": { "level": 3, "index": 1 },
-            "name": "GetRegistryRole",
-            "comment": "Gets the registry role.",
+            "name": "GetRegistry",
+            "comment": "Gets the entire Registry.",
             "arguments": [],
             "return_values": [
                 {
-                    "name": "RegistryRole",
-                    "type": "OcaString"
+                    "name": "Registry",
+                    "type": "OcaList<Aes67StreamEndpointDescriptor>"
                 }
             ]
         },
         {
             "id": { "level": 3, "index": 2 },
-            "name": "SetRegistryRole",
-            "comment": "Sets the registry role.",
+            "name": "GetRegistryEntry",
+            "comment": "Gets a Registry entry. Draft 261030 pseudocode omits the selector; IDExternal is used here for consistency with DeleteRegistryEntry.",
             "arguments": [
                 {
-                    "name": "RegistryRole",
-                    "type": "OcaString"
+                    "name": "IDExternal",
+                    "type": "OcaBlob",
+                    "comment": "IDExternal value of the entry to return."
                 }
             ],
-            "return_values": []
+            "return_values": [
+                {
+                    "name": "Entry",
+                    "type": "Aes67StreamEndpointDescriptor"
+                }
+            ]
         },
         {
             "id": { "level": 3, "index": 3 },
-            "name": "GetRegistry",
-            "comment": "Retrieves the whole Registry.",
-            "arguments": [],
+            "name": "AddRegistryEntry",
+            "comment": "Adds an entry to the Registry. Returns the resulting entry.",
+            "arguments": [
+                {
+                    "name": "Entry",
+                    "type": "Aes67StreamEndpointDescriptor"
+                }
+            ],
             "return_values": [
                 {
-                    "name": "Registry",
-                    "type": "OcaList<Aes67StreamDescriptor>"
+                    "name": "Entry",
+                    "type": "Aes67StreamEndpointDescriptor"
                 }
             ]
         },
         {
             "id": { "level": 3, "index": 4 },
-            "name": "GetDescriptor",
-            "comment": "Retrieves a single entry.",
+            "name": "SetRegistryEntry",
+            "comment": "Modifies a Registry entry. Entry.IDExternal identifies the entry to modify.",
             "arguments": [
                 {
-                    "name": "ID",
-                    "type": "OcaID32",
-                    "comment": "ID of entry to be returned."
+                    "name": "Entry",
+                    "type": "Aes67StreamEndpointDescriptor"
                 }
             ],
-            "return_values": [
-                {
-                    "name": "Descriptor",
-                    "type": "Aes67StreamDescriptor"
-                }
-            ]
+            "return_values": []
         },
         {
             "id": { "level": 3, "index": 5 },
-            "name": "AddDescriptor",
-            "comment": "Adds an entry. Entry ID in Descriptor is ignored; Device allocates and returns the ID.",
+            "name": "DeleteRegistryEntry",
+            "comment": "Deletes an entry from the Registry.",
             "arguments": [
                 {
-                    "name": "Descriptor",
-                    "type": "Aes67StreamDescriptor"
+                    "name": "IDExternal",
+                    "type": "OcaBlob",
+                    "comment": "IDExternal value of entry to be deleted."
                 }
             ],
-            "return_values": [
-                {
-                    "name": "ID",
-                    "type": "OcaID32"
-                }
-            ]
+            "return_values": []
         },
         {
             "id": { "level": 3, "index": 6 },
-            "name": "SetDescriptor",
-            "comment": "Sets a stream descriptor. Descriptor shall have the entry ID filled in.",
-            "arguments": [
-                {
-                    "name": "Descriptor",
-                    "type": "Aes67StreamDescriptor"
-                }
-            ],
-            "return_values": []
-        },
-        {
-            "id": { "level": 3, "index": 7 },
-            "name": "DeleteDescriptor",
-            "comment": "Deletes a stream descriptor.",
-            "arguments": [
-                {
-                    "name": "ID",
-                    "type": "OcaID32",
-                    "comment": "Entry ID of what's to be deleted."
-                }
-            ],
-            "return_values": []
-        },
-        {
-            "id": { "level": 3, "index": 8 },
-            "name": "AddDescriptorsFromSDP",
-            "comment": "Adds one or more entries from an SDP spec. Device allocates ID(s) and returns them.",
+            "name": "AddRegistryEntriesFromSDP",
+            "comment": "Optional method. Adds one or more Registry entries based on a given SDP string.",
             "arguments": [
                 {
                     "name": "SDPString",
                     "type": "OcaSDPString"
                 }
             ],
-            "return_values": [
-                {
-                    "name": "IDs",
-                    "type": "OcaList<OcaID32>"
-                }
-            ]
+            "return_values": []
         }
     ],
     "events": [
         {
             "id": { "level": 3, "index": 1 },
             "name": "RegistryChanged",
-            "comment": "Registry entry added, changed, or deleted.",
+            "comment": "Raised when Registry changes.",
             "argument": {
                 "name": "EventData",
-                "type": "RegistryEntryChangedEventData"
+                "type": "Aes67RegistryChangedEventData"
             }
         },
         {
             "id": { "level": 3, "index": 2 },
-            "name": "RegistryReplaced",
-            "comment": "Device replaces or rebuilds entire Registry.",
+            "name": "RegistryRebuilt",
+            "comment": "Raised when Registry is rebuilt.",
             "argument": {
                 "name": "EventData",
-                "type": "RegistryReplacedEventData"
+                "type": "Aes67RegistryRebuiltEventData"
             }
         }
     ]

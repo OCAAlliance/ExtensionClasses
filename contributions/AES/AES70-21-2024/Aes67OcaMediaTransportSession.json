@@ -1,6 +1,7 @@
 {
     "type": "struct",
     "name": "Aes67OcaMediaTransportSession",
+    "comment": "Informative specialization note for OcaMediaTransportSession as used by Aes67OcaMediaTransportSessionAgent. Draft 261030 types Sessions as OcaList<OcaMediaTransportSession>; AdaptationData shall be an OcaParameterRecord with AES70-21 Table 24 elements: to, from, user-agent (read-only optional), _server (conditional), _sdpInitial (conditional), _sdpFinal (read-only required).",
     "properties": [
         {
             "name": "IDInternal",
@@ -24,8 +25,8 @@
         },
         {
             "name": "AdaptationData",
-            "type": "OcaTypedBlob<OcaParameterRecord>",
-            "comment": "SIP parameter record used for session negotiation and control."
+            "type": "OcaParameterRecord",
+            "comment": "SIP parameter record. Normative keys (AES70-21 Table 24): to, from, user-agent, _server, _sdpInitial, _sdpFinal."
         },
         {
             "name": "Connections",

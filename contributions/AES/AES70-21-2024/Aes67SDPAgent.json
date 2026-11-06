@@ -2,7 +2,7 @@
     "type": "control_class",
     "name": "Aes67SDPAgent",
     "parent": "OcaAgent",
-    "comment": "Implementation-specific SDP processing control interface. Gives Controllers access to a Device's SDP processing features; definitions of those features are out of scope of this Adaptation.",
+    "comment": "Allows a Controller to transmit an SDP string to a Device for Device-specific processing. The nature of such processing is outside the scope of this Standard. Possible actions include making stream connections and/or creating Stream Source Registry entries.",
     "classid": {
         "cid": "000B5E",
         "suffix": "2103"
@@ -12,14 +12,14 @@
             "id": { "level": 3, "index": 1 },
             "name": "SDPString",
             "type": "OcaSDPString",
-            "comment": "The SDP string being processed."
+            "comment": "The SDP string."
         }
     ],
     "methods": [
         {
             "id": { "level": 3, "index": 1 },
             "name": "GetSDPString",
-            "comment": "Gets the active SDP string.",
+            "comment": "Gets value of property SDPString.",
             "arguments": [],
             "return_values": [
                 {
@@ -31,20 +31,13 @@
         {
             "id": { "level": 3, "index": 2 },
             "name": "SetSDPString",
-            "comment": "Sets the active SDP string.",
+            "comment": "Sets value of property SDPString.",
             "arguments": [
                 {
                     "name": "SDPString",
                     "type": "OcaSDPString"
                 }
             ],
-            "return_values": []
-        },
-        {
-            "id": { "level": 3, "index": 3 },
-            "name": "ClearSDPString",
-            "comment": "Makes no SDP string active. State becomes idle.",
-            "arguments": [],
             "return_values": []
         }
     ]

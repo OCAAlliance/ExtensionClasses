@@ -2,44 +2,99 @@
     "type": "control_class",
     "name": "Aes67OcaMediaTransportSessionAgent",
     "parent": "OcaMediaTransportSessionAgent",
+    "comment": "Adds SIP session control features to OcaMediaTransportSessionAgent. For each associated SIP-controlled session, AdaptationData shall be an OcaParameterRecord whose elements are specified in AES70-21 Table 24 (to, from, user-agent, _server, _sdpInitial, _sdpFinal).",
     "classid": {
         "cid": "000B5E",
         "suffix": "2101"
     },
     "properties": [
         {
-            "id": { "level": 3, "index": 2 },
+            "id": { "level": 4, "index": 1 },
             "name": "Sessions",
-            "type": "OcaList<Aes67OcaMediaTransportSession>"
+            "type": "OcaList<OcaMediaTransportSession>",
+            "comment": "List of SIP-controlled sessions for this CM4 instance."
         }
     ],
     "methods": [
         {
-            "id": { "level": 3, "index": 2 },
-            "name": "GetSessions",
-            "arguments": [],
-            "return_values": [
-                {
-                    "name": "Sessions",
-                    "type": "OcaList<Aes67OcaMediaTransportSession>"
-                }
-            ]
-        },
-        {
-            "id": { "level": 3, "index": 3 },
-            "name": "GetSession",
+            "id": { "level": 4, "index": 1 },
+            "name": "GetSIPParameterRecord",
+            "comment": "Gets the entire SIP parameter record from the AdaptationData property of the identified session.",
             "arguments": [
                 {
-                    "name": "ID",
-                    "type": "OcaMediaTransportSessionID"
+                    "name": "SessionID",
+                    "type": "OcaID16",
+                    "comment": "ID of the Sessions entry being accessed."
                 }
             ],
             "return_values": [
                 {
-                    "name": "Session",
-                    "type": "Aes67OcaMediaTransportSession"
+                    "name": "Rec",
+                    "type": "OcaParameterRecord"
                 }
             ]
+        },
+        {
+            "id": { "level": 4, "index": 2 },
+            "name": "SetSIPParameterRecord",
+            "comment": "Sets the entire SIP parameter record in the AdaptationData property of the identified session.",
+            "arguments": [
+                {
+                    "name": "SessionID",
+                    "type": "OcaID16",
+                    "comment": "ID of the Sessions entry being accessed."
+                },
+                {
+                    "name": "Rec",
+                    "type": "OcaParameterRecord"
+                }
+            ],
+            "return_values": []
+        },
+        {
+            "id": { "level": 4, "index": 3 },
+            "name": "GetSIPParameter",
+            "comment": "Gets value of an SIP parameter from the AdaptationData property.",
+            "arguments": [
+                {
+                    "name": "SessionID",
+                    "type": "OcaID16",
+                    "comment": "ID of the Sessions entry being accessed."
+                },
+                {
+                    "name": "ParameterKey",
+                    "type": "OcaString",
+                    "comment": "Name of the parameter to retrieve (SIP header field name, or a non-header key such as _server)."
+                }
+            ],
+            "return_values": [
+                {
+                    "name": "ParameterValue",
+                    "type": "OcaJsonValue"
+                }
+            ]
+        },
+        {
+            "id": { "level": 4, "index": 4 },
+            "name": "SetSIPParameter",
+            "comment": "Sets value of an SIP parameter in the AdaptationData property.",
+            "arguments": [
+                {
+                    "name": "SessionID",
+                    "type": "OcaID16",
+                    "comment": "ID of the Sessions entry being accessed."
+                },
+                {
+                    "name": "ParameterKey",
+                    "type": "OcaString",
+                    "comment": "Name of the parameter to set."
+                },
+                {
+                    "name": "ParameterValue",
+                    "type": "OcaJsonValue"
+                }
+            ],
+            "return_values": []
         }
     ]
 }

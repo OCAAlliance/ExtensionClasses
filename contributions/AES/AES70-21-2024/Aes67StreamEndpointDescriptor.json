@@ -1,7 +1,7 @@
 {
     "type": "struct",
-    "name": "Aes67StreamDescriptor",
-    "comment": "Datatype of stream registry entries. Fields are essentially the relevant fields of OcaMediaStreamEndpoint, plus a few added items.",
+    "name": "Aes67StreamEndpointDescriptor",
+    "comment": "Datatype of a Stream Registry entry. Fields are essentially the relevant fields of OcaMediaStreamEndpoint, plus a few added items.",
     "properties": [
         {
             "name": "IDExternal",
@@ -16,7 +16,7 @@
         {
             "name": "Direction",
             "type": "OcaIODirection",
-            "comment": "Input or output stream direction."
+            "comment": "Input or output stream."
         },
         {
             "name": "AlignmentLevel",
@@ -46,12 +46,12 @@
         {
             "name": "SDPString",
             "type": "OcaSDPString",
-            "comment": "SDP string, if available."
+            "comment": "SDP string that describes this Endpoint, if available."
         },
         {
             "name": "SIPString",
             "type": "OcaString",
-            "comment": "SIP string, if available."
+            "comment": "SIP string that identifies this Endpoint, if available."
         },
         {
             "name": "InfoSource",

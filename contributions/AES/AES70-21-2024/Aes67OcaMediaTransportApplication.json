@@ -11,19 +11,13 @@
             "id": { "level": 3, "index": 10 },
             "name": "Endpoints",
             "type": "OcaList<Aes67OcaMediaStreamEndpoint>",
-            "comment": "Descriptors of Stream Endpoints that belong to this object."
+            "comment": "Descriptors of Media Stream Endpoints that belong to this object."
         },
         {
-            "id": { "level": 4, "index": 6 },
-            "name": "SSRONo",
+            "id": { "level": 4, "index": 1 },
+            "name": "StreamSourceRegistryONo",
             "type": "OcaONo",
-            "comment": "Object number of related SSR (Aes67StreamEndpointRegistry), or zero if none."
-        },
-        {
-            "id": { "level": 4, "index": 7 },
-            "name": "SDPAgentONo",
-            "type": "OcaONo",
-            "comment": "Object number of related SDP Agent (Aes67SDPAgent), or zero if none."
+            "comment": "Object number of associated Aes67StreamEndpointRegistry object, or zero if there is no SSR. May be read-only."
         }
     ],
     "methods": [
@@ -77,103 +71,32 @@
         },
         {
             "id": { "level": 4, "index": 3 },
-            "name": "SubmitSDP",
-            "arguments": [
+            "name": "GetStreamSourceRegistryONo",
+            "comment": "Gets the StreamSourceRegistryONo property.",
+            "arguments": [],
+            "return_values": [
                 {
-                    "name": "EndpointID",
-                    "type": "OcaMediaStreamEndpointID"
-                },
-                {
-                    "name": "SDPtext",
-                    "type": "OcaSDPString"
+                    "name": "StreamSourceRegistryONo",
+                    "type": "OcaONo"
                 }
-            ],
-            "return_values": []
+            ]
         },
         {
             "id": { "level": 4, "index": 4 },
-            "name": "GetSubmittedSDP",
+            "name": "SetStreamSourceRegistryONo",
+            "comment": "Sets the StreamSourceRegistryONo property. Shall not be implemented when the property is read-only.",
             "arguments": [
                 {
-                    "name": "EndpointID",
-                    "type": "OcaMediaStreamEndpointID"
+                    "name": "StreamSourceRegistryONo",
+                    "type": "OcaONo"
                 }
             ],
-            "return_values": [
-                {
-                    "name": "SDPtext",
-                    "type": "OcaSDPString"
-                }
-            ]
+            "return_values": []
         },
         {
             "id": { "level": 4, "index": 5 },
-            "name": "GetActiveSDP",
-            "arguments": [
-                {
-                    "name": "EndpointID",
-                    "type": "OcaMediaStreamEndpointID"
-                }
-            ],
-            "return_values": [
-                {
-                    "name": "SDPtext",
-                    "type": "OcaSDPString"
-                }
-            ]
-        },
-        {
-            "id": { "level": 4, "index": 6 },
-            "name": "GetSSRONo",
-            "comment": "Optional method. Gets the SSR object number.",
-            "arguments": [],
-            "return_values": [
-                {
-                    "name": "SSRONo",
-                    "type": "OcaONo"
-                }
-            ]
-        },
-        {
-            "id": { "level": 4, "index": 7 },
-            "name": "SetSSRONo",
-            "comment": "Optional method. Sets the SSR object number.",
-            "arguments": [
-                {
-                    "name": "SSRONo",
-                    "type": "OcaONo"
-                }
-            ],
-            "return_values": []
-        },
-        {
-            "id": { "level": 4, "index": 8 },
-            "name": "GetSDPAgentONo",
-            "comment": "Optional method. Gets the SDP Agent object number.",
-            "arguments": [],
-            "return_values": [
-                {
-                    "name": "SDPAgentONo",
-                    "type": "OcaONo"
-                }
-            ]
-        },
-        {
-            "id": { "level": 4, "index": 9 },
-            "name": "SetSDPAgentONo",
-            "comment": "Optional method. Sets the SDP Agent object number.",
-            "arguments": [
-                {
-                    "name": "SDPAgentONo",
-                    "type": "OcaONo"
-                }
-            ],
-            "return_values": []
-        },
-        {
-            "id": { "level": 4, "index": 10 },
             "name": "ConfigureEndpointFromSDP",
-            "comment": "Optional method. Configures an Endpoint based on an SDP string. StreamID selects a stream from a multistream SDP spec (UDP port number); may be zero for single-stream SDP.",
+            "comment": "Optional method. Configures an Endpoint from a given SDP string. If SDPString is null, closes any active connection through the Endpoint and sets its EndpointStatuses entry to NotReady. On success: configures connection parameters from the selected Media Description; sets AdaptationData.ActiveSDP, MediaIDType, and MediaID; sets IPParameters.SourcePort from the associated m= line port; sets EndpointStatuses to Ready; does not start stream data transfer.",
             "arguments": [
                 {
                     "name": "EndpointID",
@@ -183,12 +106,17 @@
                 {
                     "name": "SDPString",
                     "type": "OcaSDPString",
-                    "comment": "The SDP string."
+                    "comment": "The SDP string. Null string closes the active connection."
                 },
                 {
-                    "name": "StreamID",
-                    "type": "OcaUint16",
-                    "comment": "ID to select stream from multistream SDP spec."
+                    "name": "MediaIDType",
+                    "type": "Aes67MediaIDType",
+                    "comment": "What kind of identifier MediaID is. Shall not be None when SDPString contains multiple Media Descriptions."
+                },
+                {
+                    "name": "MediaID",
+                    "type": "OcaString",
+                    "comment": "Identifier of target Media Description within SDPString."
                 }
             ],
             "return_values": []
