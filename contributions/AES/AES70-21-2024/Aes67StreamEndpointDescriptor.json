@@ -11,7 +11,7 @@
         {
             "name": "Addresses",
             "type": "OcaList<Aes67StreamTransportAddress>",
-            "comment": "List of IP addresses and ports of all redundant paths of the stream."
+            "comment": "List of transport addresses (IP address plus port number) of all redundant paths of the stream. Authoritative IP information for registry entries."
         },
         {
             "name": "Direction",
@@ -40,13 +40,23 @@
         },
         {
             "name": "AdaptationData",
-            "type": "OcaTypedBlob<Aes67EndpointAdaptationData>",
-            "comment": "AES70-21 Adaptation-specific data."
+            "type": "OcaAdaptationData<Aes67EndpointAdaptationData>",
+            "comment": "AES70-21 Adaptation-specific data. Aes67EndpointAdaptationData.IPParameters is not suited for this context and shall be ignored; required IP information is in Addresses."
         },
         {
             "name": "SDPString",
             "type": "OcaSDPString",
-            "comment": "SDP string that describes this Endpoint, if available."
+            "comment": "SDP string that describes this Endpoint, if available. If this SDP string describes multiple streams, MediaIDType and MediaID shall identify the stream."
+        },
+        {
+            "name": "MediaIDType",
+            "type": "Aes67MediaIDType",
+            "comment": "What kind of identifier MediaID is."
+        },
+        {
+            "name": "MediaID",
+            "type": "OcaString",
+            "comment": "Identifier of the stream for the given Endpoint."
         },
         {
             "name": "SIPString",

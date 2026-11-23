@@ -1,7 +1,7 @@
 {
     "type": "struct",
     "name": "Aes67OcaMediaTransportSession",
-    "comment": "Informative specialization note for OcaMediaTransportSession as used by Aes67OcaMediaTransportSessionAgent. Draft 261030 types Sessions as OcaList<OcaMediaTransportSession>; AdaptationData shall be an OcaParameterRecord with AES70-21 Table 24 elements: to, from, user-agent (read-only optional), _server (conditional), _sdpInitial (conditional), _sdpFinal (read-only required).",
+    "comment": "Informative specialization note for OcaMediaTransportSession as used by Aes67OcaMediaTransportSessionAgent. Draft types Sessions as OcaList<OcaMediaTransportSession>; AdaptationData shall be an OcaParameterRecord with AES70-21 Table 25 elements: to, from, user-agent (read-only optional), _server (conditional), _sdpInitial (conditional), _sdpFinal (read-only required).",
     "properties": [
         {
             "name": "IDInternal",

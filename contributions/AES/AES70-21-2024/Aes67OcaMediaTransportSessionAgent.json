@@ -2,14 +2,14 @@
     "type": "control_class",
     "name": "Aes67OcaMediaTransportSessionAgent",
     "parent": "OcaMediaTransportSessionAgent",
-    "comment": "Adds SIP session control features to OcaMediaTransportSessionAgent. For each associated SIP-controlled session, AdaptationData shall be an OcaParameterRecord whose elements are specified in AES70-21 Table 24 (to, from, user-agent, _server, _sdpInitial, _sdpFinal).",
+    "comment": "Adds SIP session control features to OcaMediaTransportSessionAgent. For each associated SIP-controlled session, AdaptationData shall be an OcaParameterRecord whose elements are specified in AES70-21 Table 25 (to, from, user-agent, _server, _sdpInitial, _sdpFinal).",
     "classid": {
         "cid": "000B5E",
         "suffix": "2101"
     },
     "properties": [
         {
-            "id": { "level": 4, "index": 1 },
+            "id": { "level": 3, "index": 2 },
             "name": "Sessions",
             "type": "OcaList<OcaMediaTransportSession>",
             "comment": "List of SIP-controlled sessions for this CM4 instance."

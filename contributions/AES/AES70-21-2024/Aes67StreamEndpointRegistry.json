@@ -31,12 +31,12 @@
         {
             "id": { "level": 3, "index": 2 },
             "name": "GetRegistryEntry",
-            "comment": "Gets a Registry entry. Draft 261030 pseudocode omits the selector; IDExternal is used here for consistency with DeleteRegistryEntry.",
+            "comment": "Gets a Registry entry by IDExternal.",
             "arguments": [
                 {
                     "name": "IDExternal",
                     "type": "OcaBlob",
-                    "comment": "IDExternal value of the entry to return."
+                    "comment": "External ID of entry to be retrieved."
                 }
             ],
             "return_values": [
@@ -49,19 +49,14 @@
         {
             "id": { "level": 3, "index": 3 },
             "name": "AddRegistryEntry",
-            "comment": "Adds an entry to the Registry. Returns the resulting entry.",
+            "comment": "Adds an entry to the Registry.",
             "arguments": [
                 {
                     "name": "Entry",
                     "type": "Aes67StreamEndpointDescriptor"
                 }
             ],
-            "return_values": [
-                {
-                    "name": "Entry",
-                    "type": "Aes67StreamEndpointDescriptor"
-                }
-            ]
+            "return_values": []
         },
         {
             "id": { "level": 3, "index": 4 },
